@@ -22,7 +22,7 @@ Author: themehippo.com
 .page-header {
     background-color: #f1f1f1;
     padding: 20px 0;
-    text-align: left;
+    text-align: right;
   }
   
   .page-title {
@@ -127,7 +127,7 @@ ul {
  * Button Style
  *------------------*/
 .btn {
-    padding        : 14px 30px 11px;
+    padding        : 10px 10px 2px;
     margin-bottom  : 0;
     font-size      : 14px;
     font-weight    : 500;
