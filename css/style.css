@@ -17,11 +17,11 @@ Author: themehippo.com
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1020;
+    z-index: 2020;
   }
 .page-header {
     background-color: #ffffff;
-    padding: 20px 0;
+    /* padding: 0px 0; */
     text-align: right;
     margin-bottom: 0px;
   }
@@ -92,8 +92,8 @@ h6 {
  * LINK STYLE
  *------------------------------------------*/
 a {
-    color              : #ff9800;
-    text-decoration    : none;
+    color              : #6ab5c7;
+    text-decoration    : underline;
     -webkit-transition : all 0.3s ease 0s;
     -moz-transition    : all 0.3s ease 0s;
     -o-transition      : all 0.3s ease 0s;
@@ -104,7 +104,7 @@ a,
 a:active,
 a:focus,
 a:active {
-    text-decoration : none;
+    text-decoration : underline;
     outline         : none
     }
 
@@ -145,7 +145,7 @@ ul {
 
 /*btn-primary*/
 .btn-primary {
-    background-color : #bebece;
+    background-color : #ff9800;
     }
 
 .btn-primary:hover,
@@ -205,9 +205,9 @@ ul {
     display                : flex;
     -webkit-flex-direction : row;
     flex-direction         : row;
-    margin                 : 60px auto;
+    margin                 : 0px auto;
     padding                : 0;
-    box-shadow             : 0 0 0 1px #eaeaea;
+    box-shadow             : 0 0 0 2px #eaeaea;
     }
 
 .blocks {
@@ -277,7 +277,7 @@ ul {
  * Section Wrapper
  *-------------------*/
 .section-wrapper {
-    padding       : 50px;
+    padding       : 30px;
     border-bottom : 1px solid #eaeaea;
     }
 
