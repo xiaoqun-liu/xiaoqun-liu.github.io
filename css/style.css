@@ -20,9 +20,10 @@ Author: themehippo.com
     z-index: 1020;
   }
 .page-header {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     padding: 20px 0;
     text-align: right;
+    margin-bottom: 0px;
   }
   
   .page-title {
@@ -91,7 +92,7 @@ h6 {
  * LINK STYLE
  *------------------------------------------*/
 a {
-    color              : #FFC107;
+    color              : #ff9800;
     text-decoration    : none;
     -webkit-transition : all 0.3s ease 0s;
     -moz-transition    : all 0.3s ease 0s;
@@ -144,13 +145,13 @@ ul {
 
 /*btn-primary*/
 .btn-primary {
-    background-color : #FFC107;
+    background-color : #bebece;
     }
 
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active:focus {
-    background : #ff9800;
+    background : #bebece;
     }
 
 /*btn-default*/
