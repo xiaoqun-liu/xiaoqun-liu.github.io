@@ -20,6 +20,7 @@
 
     <!-- font-awesome -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -125,14 +126,18 @@
 
 
                         <ul class="social-icon">
-                            <li><a href="https://github.com/xiaoqunLiu"><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                            <li><a href="https://x.com/Shawn_i"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                            <li><a href="https://openreview.net/profile?id=~Xiaoqun_Liu1"><i class="fa fa-regular fa-file" aria-hidden="true"></i></a></li>
-                            <li><a href="slide.html"><i  class="fa fa-regular fa-file" aria-hidden="true"></i></a></li>
+                            <li><a href="https://github.com/xiaoqunLiu"><i class="fab fa-github"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://x.com/Shawn_i"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                            <li><a href="https://openreview.net/profile?id=~Xiaoqun_Liu1"><i
+                                        class="far fa-regular fa-file" aria-hidden="true"></i></a></li>
+                            <li><a href="slide.html"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a></li>
                             <!-- <li><a href="https://www.facebook.com/xiaoqueen.liu/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> -->
-                            <li><a href="https://www.instagram.com/xiaoqueen.liu/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.linkedin/in/xiaoqunLiu.com"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="weixin://add/17839964907"><i class="fa fa-wechat" aria-hidden="true"></i></a>
+                            <li><a href="https://www.instagram.com/xiaoqueen.liu/"><i class="fab fa-instagram"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="https://www.linkedin/in/xiaoqunLiu.com"><i class="fab fa-linkedin"
+                                        aria-hidden="true"></i></a></li>
+                            <li><a href="weixin://add/17839964907"><i class="fab fa-wechat" aria-hidden="true"></i></a>
                             </li>
 
 
@@ -166,9 +171,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- <iframe src="#pub"frameborder="0" style="width: 100%; height: auto;"></iframe> -->
                             <!-- .row -->
                             <div class="row">
                                 <div class="col-md-2">
+                                    
                                     <div class="expertise-item">
                                         <img src="img/sustech.png" alt="My Image" width="80" height="80"><br>
                                     </div>
@@ -265,7 +272,7 @@
                             <!--.row-->
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="content-item">
+                                    <div class="content-item" id="research_e">
                                         <small>1/2024 - present</small>
                                         <h3>Large Language Models Alignment <a href="align.html">Details</a></h3>
                                         <h4>Research Assistant</h4>
@@ -288,62 +295,77 @@
                                             University of New York</p>
                                     </div>
 
-                                    <div class="content-item">
-                                        <small>5/2024 - present</small>
-                                        <h3>Periodicity of Large Language Models <a href="404.html">Details</a></h3>
-                                        <h4>Research Assistant</h4>
-                                        <img src="img/backchannel.png" alt="" width=100% height=auto><br>
-                                        Huamn language exhibits a degree of periodicity in behavior and outputs, which
-                                        can be analyzed through spectral analysis techniques to gain insights into the
-                                        underlying patterns and dynamics of the LLMs. The potential aspects are water
-                                        marks, eye tracking optimization and so on.
-                                        <p>Under the guidance of Professor Yang Xu, SUSTech, Shen Zhen, Guang Dong,
-                                            China</p>
+                                    <div id="research_i">
+                                        <div class="content-item">
+                                            <small>5/2024 - present</small>
+                                            <h3>Periodicity of Large Language Models <a href="404.html">Details</a></h3>
+                                            <h4>Research Assistant</h4>
+                                            <img src="img/backchannel.png" alt="" width=100% height=auto><br>
+                                            Huamn language exhibits a degree of periodicity in behavior and outputs,
+                                            which
+                                            can be analyzed through spectral analysis techniques to gain insights into
+                                            the
+                                            underlying patterns and dynamics of the LLMs. The potential aspects are
+                                            water
+                                            marks, eye tracking optimization and so on.
+                                            <p>Under the guidance of Professor Yang Xu, SUSTech, Shen Zhen, Guang Dong,
+                                                China</p>
+                                        </div>
+
+                                        <div class="content-item">
+                                            <small>5/2024 - present</small>
+                                            <h3>Compression of Large Language Models <a href="404.html">Details</a></h3>
+                                            <h4>Research Assistant</h4>
+                                            As the scale of large language models (LLMs) continues to grow, the demand
+                                            for efficient model compression and pruning techniques becomes increasingly
+                                            critical. However, current approaches either require extensive retraining or
+                                            involve post-training quantization and pruning, both of which are
+                                            computationally expensive and consume substantial resources. To trackle this
+                                            issue, we present BaR (Block-aware Reservation after Post-Training Pruning),
+                                            a new and effective approach to prune LLMs. Experiments undergo.
+                                            <p>Work with my research partners in SUSTech and HKU.</p>
+                                        </div>
                                     </div>
 
-                                    <div class="content-item">
-                                        <small>5/2024 - present</small>
-                                        <h3>Compression of Large Language Models <a href="404.html">Details</a></h3>
-                                        <h4>Research Assistant</h4>
-                                        As the scale of large language models (LLMs) continues to grow, the demand for efficient model compression and pruning techniques becomes increasingly critical. However, current approaches either require extensive retraining or involve post-training quantization and pruning, both of which are computationally expensive and consume substantial resources. To trackle this issue, we present BaR (Block-aware Reservation after Post-Training Pruning), a new and effective approach to prune LLMs. Experiments undergo.
-                                        <p>Work with my research partners in SUSTech and HKU.</p>
+                                    <div id="research_pre">
+                                        <div class="content-item">
+                                            <small>6/2023 - 6/2024</small>
+                                            <h3>Evolutionary Online imbalanced dataset <a href="online.html">Details</a>
+                                            </h3>
+                                            <h4>For Academic Credit</h4>
+                                            <img src="img/online.png" alt="" width=100% height=auto><br>
+                                            Find usage of evolutionary algorithms on online imbalanced problems both
+                                            data-level and algorithm-level. Final report was structured to a paper,
+                                            namely
+                                            Threshold Moving for Online Class Imbalance Learning with Dynamic
+                                            Evolutionary
+                                            Cost Vector, have been submitted to TMLR at <a
+                                                href="https://openreview.net/forum?id=EIPnUofed9&referrer=%5Bthe%20profile%20of%20Xiaoqun%20Liu%5D(%2Fprofile%3Fid%3D~Xiaoqun_Liu1)"
+                                                target="_blank">https://openreview.net/forum?id=EIPnUofed9</a>.
+                                            <p>Under the guidance of Professor Siang Yew Chong, SUSTech, Shen Zhen,
+                                                Guang
+                                                Dong, China</p>
+                                        </div>
+                                        <div class="content-item">
+                                            <small>6/2022 - 12/2023</small>
+                                            <h3>Evolutionary Forward-forward <a href="404.html">Details</a></h3>
+                                            <h4>Research Assistant</h4>
+                                            Improve the performance of Forward-forward algorithm by Geoffrey Hinton.
+                                            Implement the algorithm into memrister crossbar.
+                                            <p>Under the guidance of Professor Xin Yao, Lingnan University, Hong Kong,
+                                                China
+                                                and Professor Xinming Shi, Queen's University Belfast, Northern Ireland,
+                                                United Kingdom</p>
+                                        </div>
+                                        <div class="content-item">
+                                            <small>2/2022 - 9/2022</small>
+                                            <h3>Research Assistant of Quantum Academy <a href="404.html">Details</a>
+                                            </h3>
+                                            <h4>Select-major Period</h4>
+                                            Adjustment of precision instruments and assisting in observational studies.
+                                            <p>Quantum Academy of SUSTech, Shen Zhen, Guang Dong, China</p>
+                                        </div>
                                     </div>
-
-                                    <div class="content-item">
-                                        <small>6/2023 - 6/2024</small>
-                                        <h3>Evolutionary Online imbalanced dataset <a href="online.html">Details</a>
-                                        </h3>
-                                        <h4>For Academic Credit</h4>
-                                        <img src="img/online.png" alt="" width=100% height=auto><br>
-                                        Find usage of evolutionary algorithms on online imbalanced problems both
-                                        data-level and algorithm-level. Final report was structured to a paper, namely
-                                        Threshold Moving for Online Class Imbalance Learning with Dynamic Evolutionary
-                                        Cost Vector, have been submitted to TMLR at <a
-                                            href="https://openreview.net/forum?id=EIPnUofed9&referrer=%5Bthe%20profile%20of%20Xiaoqun%20Liu%5D(%2Fprofile%3Fid%3D~Xiaoqun_Liu1)"
-                                            target="_blank">https://openreview.net/forum?id=EIPnUofed9</a>.
-                                        <p>Under the guidance of Professor Siang Yew Chong, SUSTech, Shen Zhen, Guang
-                                            Dong, China</p>
-                                    </div>
-
-                                    <div class="content-item">
-                                        <small>6/2022 - 12/2023</small>
-                                        <h3>Evolutionary Forward-forward <a href="404.html">Details</a></h3>
-                                        <h4>Research Assistant</h4>
-                                        Improve the performance of Forward-forward algorithm by Geoffrey Hinton.
-                                        Implement the algorithm into memrister crossbar.
-                                        <p>Under the guidance of Professor Xin Yao, Lingnan University, Hong Kong, China
-                                            and Professor Xinming Shi, Queen's University Belfast, Northern Ireland,
-                                            United Kingdom</p>
-                                    </div>
-
-                                    <div class="content-item">
-                                        <small>2/2022 - 9/2022</small>
-                                        <h3>Research Assistant of Quantum Academy <a href="404.html">Details</a></h3>
-                                        <h4>Select-major Period</h4>
-                                        Adjustment of precision instruments and assisting in observational studies.
-                                        <p>Quantum Academy of SUSTech, Shen Zhen, Guang Dong, China</p>
-                                    </div>
-
                                     <!-- .experience-item -->
                                 </div>
                             </div>
@@ -500,7 +522,8 @@
                                     <div class="content-item">
                                         <h3>Momemtum: is it truly exist in tennis game? <a href="MCM2.html">Details</a>
                                             <small><em>(Feb.
-                                                    2024)</em></small></h3>
+                                                    2024)</em></small>
+                                        </h3>
                                         <img src="img/game.jpg" alt="" width="200" /></h3><br>
                                         Contest: COMAP-MCM-C 2024 <a
                                             href="https://drive.google.com/file/d/15RRdsJM82M24-4YZVg7r7x8tHcHP_J7M/view">report</a><br>

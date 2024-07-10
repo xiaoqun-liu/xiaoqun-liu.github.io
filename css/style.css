@@ -276,8 +276,9 @@ ul {
 /*-------------------
  * Section Wrapper
  *-------------------*/
+ /* big change */
 .section-wrapper {
-    padding       : 30px;
+    padding       : 20px;
     border-bottom : 1px solid #eaeaea;
     }
 
