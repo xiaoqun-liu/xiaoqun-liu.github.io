@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>自动切换幻灯片</title>
+  <style>
+    /* 前面的 CSS 样式保持不变 */
+  </style>
+</head>
+<body>
+  <div class="slide-container">
+    <div class="slide">
+        <h1>欢迎来到网页 PPT</h1>
+        <p>这是第一张幻灯片</p>
+      </div>
+  
+      <div class="slide">
+        <h1>这是第二张幻灯片</h1>
+        <p>在这里,您可以添加更多的内容。</p>
+      </div>
+  
+      <div class="slide">
+        <h1>这是第三张幻灯片</h1>
+        <p>您可以继续添加更多的幻灯片。</p>
+      </div>
+  </div>
+
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let currentSlideIndex = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
+    function nextSlide() {
+      currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+      showSlide(currentSlideIndex);
+    }
+
+    // 每 5 秒自动切换到下一张幻灯片
+    setInterval(nextSlide, 5000);
+
+    // 初次加载时显示第一张幻灯片
+    showSlide(currentSlideIndex);
+  </script>
+</body>
+</html>

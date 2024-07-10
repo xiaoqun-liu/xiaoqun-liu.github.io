@@ -1,0 +1,45 @@
+html, body {
+    margin: 10px;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* 设置 slide-container 占满整个页面 */
+  .slide-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* 设置单个幻灯片占满整个页面 */
+  .slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+  
+  /* 设置幻灯片内容的样式 */
+  .slide h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide p {
+    font-size: 1.5rem;
+  }
+  
+  .slide iframe {
+    width: 100%;
+    height: 60%;
+    border: none;
+  }
