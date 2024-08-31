@@ -52,6 +52,21 @@
         </div>
         <div class="container">
         </div>
+
+        <script>
+            let lastScrollTop = 0;
+            const header = document.querySelector('.page-header');
+        
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    header.style.top = '-60px'; // 根据 header 的高度调整
+                } else {
+                    header.style.top = '0';
+                }
+                lastScrollTop = scrollTop;
+            });
+        </script>
     </header>
 
     <div id="main-wrapper">
