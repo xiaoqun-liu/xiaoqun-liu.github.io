@@ -270,7 +270,9 @@ ul {
  *  main Wrapper
  * -------------------*/
 #main-wrapper {
+    /* width: 100vw;  视口宽度的 80% */
     overflow : hidden;
+    /* margin: auto; */
     }
 
 /*-------------------
