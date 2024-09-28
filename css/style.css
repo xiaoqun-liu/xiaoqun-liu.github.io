@@ -335,7 +335,7 @@ ul {
 .profile{
     margin-top: 10px;
     margin-bottom: 40px;
-    border-radius: 20%;
+    border-radius: 10%;
     width: 300px;
     overflow: hidden; 
     display: flex; 
