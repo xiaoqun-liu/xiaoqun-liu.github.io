@@ -14,20 +14,16 @@ Author: themehippo.com
 # Mid grey (sub header) #f4f4f4
 # -------------------------------------------------------------------*/
 .name {
-    /* text-align: center; */
-    margin-right: 30px;
-    margin: 20px 0;
-    padding-left: 50px; /* 左边距 */
-    padding-right: 30px; /* 右边距 */
+    text-align: center;
+    /* padding-left: 70px; */
+    padding-right: 30px; 
 }
 
 .name h1 {
-    font-size: 36px; /* 设置字体大小 */
+    font-size: 45px; /* 设置字体大小 */
     font-weight: 600; /* 设置字体粗细 */
     color: #333; /* 设置字体颜色 */
 }
-
-
 
 .sticky-top {
     position: -webkit-sticky;
@@ -333,20 +329,17 @@ ul {
     }
 
 .profile{
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-bottom: 10px;
     border-radius: 10%;
-    width: 300px;
     overflow: hidden; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
-.profile img {
-    width: auto; /* 保持宽高比 */
-    /* height: 80%;  */
-    min-width: 100%; /* 最小宽度为100%以覆盖 */
+.profile-avatar {
+    transform: scale(0.8);
 }
 
 .header .profile-img {
