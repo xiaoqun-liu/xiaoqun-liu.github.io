@@ -8,6 +8,19 @@
  * Released under the MIT license
  */
 
+let lastScrollTop = 0;
+const header = document.querySelector('.page-header');
+
+window.addEventListener('scroll', function () {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+        header.style.top = '-60px';
+    } else {
+        header.style.top = '0';
+    }
+    lastScrollTop = scrollTop;
+});
+
 (function ($) {
     $.fn.theiaStickySidebar = function (options) {
         var defaults = {

@@ -13,15 +13,32 @@ Author: themehippo.com
 # Theme Color (link color) #82b541
 # Mid grey (sub header) #f4f4f4
 # -------------------------------------------------------------------*/
+.rounded-rectangle {
+    width: 150px; 
+    height: 50px;
+    border: 5px solid #6ab5c7; /* 边框样式 */
+    border-radius: 20px; /* 圆弧边角 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* 背景颜色 */
+    margin: 20px 0;
+    position: relative;
+}
+
+.text-rectangle {
+    font-size: 24px; /* 字体大小 */
+    color: #6ab5c7; /* 字体颜色 */
+    text-align: center; /* 文字居中 */
+}
+
 .name {
     text-align: center;
-    /* padding-left: 70px; */
-    padding-right: 30px; 
 }
 
 .name h1 {
-    font-size: 45px; /* 设置字体大小 */
-    font-weight: 600; /* 设置字体粗细 */
+    font-size: 35px; /* 设置字体大小 */
+    font-weight: 800; /* 设置字体粗细 */
     color: #333; /* 设置字体颜色 */
 }
 
@@ -339,7 +356,7 @@ ul {
 }
 
 .profile-avatar {
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 .header .profile-img {

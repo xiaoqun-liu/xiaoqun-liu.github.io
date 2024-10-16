@@ -12,10 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Online</title>
-
-    <!-- favicon -->
-    <!-- <link href="favicon.png" rel=icon> -->
-
     <!-- web-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
 
@@ -27,13 +23,6 @@
 
     <!-- Style CSS -->
     <link href="../css/style.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
@@ -42,13 +31,8 @@
             <a href="../index.html" class="btn btn-header">Homepage</a>
         </div>
         <div class="container">
-
         </div>
-
     </header>
-
-
-
 
     <div id="main-wrapper">
         <!-- Page Preloader -->
@@ -62,15 +46,17 @@
             <!-- left -->
             <div class="left-col-block blocks" id="home">
                 <header class="header theiaStickySidebar">
-                    <div class="profile-img">
-                        <img src="../img/onli.png" class="img-responsive" alt="" />
+                    <div class="rounded-rectangle">
+                        <div class="text-rectangle">Efficient ML</div>
                     </div>
                     <div class="content">
                         <h1>Threshold Moving for Online Class Imbalance Learning with
                             Dynamic Evolutionary Cost Vector</h1>
-                        <h3>Peijia Qin, Shuxian Li, Xiaoqun Liu, Zubin Zheng, Sun Yew Chong</h3>
+                        <h3>Peijia Qin, Shuxian Li, Xiaoqun Liu, Zubin Zheng, Sun Yew Chong(SUSTech)</h3>
+                    </div>
+                    <div class="content">
                         Research Background<br>
-                        Online learning faces challenges related to limited time and memory resources in real-time data streams. Online class-imbalance learning refers to scenarios in which samples from minority classes are significantly fewer than those from majority classes, adversely affecting predictive performance, particularly for minority class predictions. Existing methods for online class-imbalance learning rely on assumptions regarding the expected enhancement of minority classes, which are often temporary and hard-coded into the model parameters.
+                        Online learning faces challenges related to limited time and memory resources in real-time data streams. Online class-imbalance learning refers to scenarios in which samples from minority classes are significantly fewer than those from majority classes, adversely affecting predictive performance, particularly for minority class predictions. Existing methods for <b>online class-imbalance learning</b> rely on assumptions regarding the expected enhancement of minority classes, which are often temporary and hard-coded into the model parameters.
                     </div>
 
                 </header>
@@ -80,10 +66,6 @@
             <!-- right -->
             <div class="right-col-block blocks">
                 <div class="theiaStickySidebar">
-           
-                   
-
-                    <!-- project -->
                     <section class="section-wrapper section-project gray-bg">
                         <div class="container-fluid" id="pro">
                             <div class="row">
@@ -104,12 +86,12 @@
         <li><strong>Enhancing Prediction Accuracy for Minority Classes:</strong> In imbalanced data streams, minority class samples are often overlooked by the model. By appropriately setting the cost vector, the model's focus on minority class samples can be increased, thereby improving prediction accuracy for these samples.</li>
     </ul>
 
-    <h2>Implementation Method</h2>
+    <!-- <h2>Implementation Method</h2>
     In the OECV framework, the cost vector is not static; it is learned and updated in real time through dynamic evolutionary algorithms. This approach allows the model to continuously optimize performance metrics in the face of changing data streams. The evolutionary algorithm searches the cost vector space to find vectors that maximize the expected performance metrics. By incorporating the evolutionary algorithm into the online learning process, the model can adapt to new data and maintain high performance levels over time.<br><br>
 
     
     Existing online class imbalance learning methods fail to achieve optimal performance because their assumptions about enhancing minority classes are hardcoded in model parameters. To learn the model for the performance measure directly instead of using heuristics, we introduce a novel framework based on a dynamic evolutionary algorithm called Online Evolutionary Cost Vector (OECV). <br><br>
-    By bringing the threshold moving method from the cost-sensitive learning paradigm and viewing the cost vector as a hyperparameter, our method transforms the online class imbalance issue into a bi-level optimization problem. The first layer utilizes a base online classifier for rough prediction, and the second layer refines the prediction using a threshold moving cost vector learned via a dynamic evolutionary algorithm (EA). OECV benefits from both the efficiency of online learning methods and the high performance of EA, as demonstrated in empirical studies against four state-of-the-art methods on 30 datasets. Additionally, we show the effectiveness of the EA component in the ablation study by comparing OECV to its two variants, OECV-n and OECV-ea, respectively. This work reveals the superiority of incorporating EA into online imbalance classification tasks, while its potential extends beyond the scope of the class imbalance setting and warrants future research attention. We release our code1 for future research.
+    By bringing the threshold moving method from the cost-sensitive learning paradigm and viewing the cost vector as a hyperparameter, our method transforms the online class imbalance issue into a bi-level optimization problem. The first layer utilizes a base online classifier for rough prediction, and the second layer refines the prediction using a threshold moving cost vector learned via a dynamic evolutionary algorithm (EA). OECV benefits from both the efficiency of online learning methods and the high performance of EA, as demonstrated in empirical studies against four state-of-the-art methods on 30 datasets. Additionally, we show the effectiveness of the EA component in the ablation study by comparing OECV to its two variants, OECV-n and OECV-ea, respectively. This work reveals the superiority of incorporating EA into online imbalance classification tasks, while its potential extends beyond the scope of the class imbalance setting and warrants future research attention. We release our code1 for future research. -->
                                     </div>
                                 </div>
                             </div>

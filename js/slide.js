@@ -1,6 +1,7 @@
 const slides = document.querySelectorAll('.slide');
 let currentSlideIndex = 0;
 
+
 function showSlide(index) {
     //   slides.forEach((slide, i) => {
     //     slide.style.display = i === index ? 'block' : 'none';
@@ -20,10 +21,23 @@ function nextSlide() {
     showSlide(currentSlideIndex);
 }
 
+function previousSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
+    showSlide(currentSlideIndex);
+}
+
+// Add keyboard navigation
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+        previousSlide(); // Go to previous slide
+    } else if (event.key === 'ArrowRight') {
+        nextSlide(); // Go to next slide
+    }
+});
+
 showSlide(currentSlideIndex);
 
 const slideContainer = document.querySelector('.slide-container');
 slideContainer.addEventListener('click', () => {
-    //   clearInterval(autoSlideInterval);
     nextSlide();
 });
