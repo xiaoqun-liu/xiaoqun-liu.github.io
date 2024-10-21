@@ -10,15 +10,21 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
     <header class="page-header sticky-top">
         <div class="container">
-                <a href="../index.html" class="btn btn-header">Homepage</a>
+            <a href="../index.html" class="btn btn-header">Homepage</a>
         </div>
-        <div class="container">
-        </div>
+        <style>
+            .container {
+                display: flex;
+                justify-content: flex-start;
+                gap: 20px;
+            }
+        </style>
     </header>
 
     <div id="main-wrapper">
@@ -33,9 +39,15 @@
             <div class="right-col-block blocks">
                 <div class="theiaStickySidebar">
                     <!-- project -->
-                    <div class="rounded-rectangle">
-                        <div class="text-rectangle">Efficient LLMs</div>
+                    <div class="container">
+                        <div class="rounded-rectangle">
+                            <div class="text-rectangle">Efficient ML</div><i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="rounded-rectangle">
+                            <div class="text-rectangle">Efficient LLMs</div>
+                        </div>
                     </div>
+                    
                     <section class="section-wrapper section-project gray-bg">
                         <div class="container-fluid" id="pro">
                             <div class="row">

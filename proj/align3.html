@@ -10,6 +10,14 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+        }
+    </style>
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
@@ -26,12 +34,20 @@
             <div class="right-col-block blocks">
                 <div class="theiaStickySidebar">
                     <!-- project -->
-                    <section class="section-wrapper section-project gray-bg">
-                        <div class="container-fluid" id="pro">
+                    <!-- <section class="section-wrapper section-project gray-bg"> -->
+                        <!-- <div class="container-fluid" id="pro"> -->
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="rounded-rectangle">
-                                        <div class="text-rectangle">LLM Security</div>
+                                    <div class="container">
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">Efficient ML</div><i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">Efficient LLMs</div><i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">LLM Security</div>
+                                        </div>
                                     </div>
                                     <img src="../img/a_method.png" class="img-responsive" alt="" />
                                     <br>
@@ -39,8 +55,8 @@
                                         An illustration of how CTRL works, where ➀➁➂ represent generated texts through output sampling. In this case, ➀ has lower perplexity, while ➁ demonstrates poor helpfulness. As a result, the beam search selects ➂ for the next round of output sampling. Perplexity is measured by a LLM that needs to be robustified, and helpfulness is rated by GPT-4o using prompts.
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </section>
 
                     <footer class="footer">

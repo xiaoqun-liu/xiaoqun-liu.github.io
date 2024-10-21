@@ -10,6 +10,7 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar">
@@ -19,26 +20,43 @@
             <div id="status">
                 <div class="status-mes"></div>
             </div>
+            <style>
+                .container {
+                    display: flex;
+                    /* 使用flexbox布局 */
+                    justify-content: flex-start;
+                    gap: 20px;
+                }
+            </style>
         </div>
         <div class="columns-block container">
             <!-- right -->
             <div class="right-col-block blocks">
                 <div class="theiaStickySidebar">
                     <!-- project -->
-                    <section class="section-wrapper section-project gray-bg">
-                        <div class="container-fluid" id="pro">
+                    <!-- <section class="section-wrapper section-project gray-bg"> -->
+                        <!-- <div class="container-fluid" id="pro"> -->
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="rounded-rectangle">
-                                        <div class="text-rectangle">LLM Security</div>
+                                    <div class="container">
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">Efficient ML</div><i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">Efficient LLMs</div><i class="fas fa-arrow-right"></i>
+                                        </div>
+                                        <div class="rounded-rectangle">
+                                            <div class="text-rectangle">LLM Security</div>
+                                        </div>
                                     </div>
+                                    
                                     <img src="../img/a_motivation.png" class="img-responsive" width=100% alt="" />
                                     <div class="section-title">
                                         Text perplexity on (a)(c) robust (safety-aligned) and (b)(d) jailbroken LLMs is presented in box plots, with each row corresponding to a dataset. Abbreviations: “SecQ” for security-relevant queries, “CommonQ” for commonsense queries, “SafeR” for safe responses, and “Harm” for harmful responses. AdvBench and BeaverTails datasets are split into subsets specified by postfixes. For example, “AdvBench-CommonQ” refers to AdvBench examples containing commonsense queries (with the corresponding commonsense LLM response by default), while “AdvBench-SecQ-HarmR” refers to AdvBench examples with security-relevant queries and harmful responses.
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </section>
 
                     <footer class="footer">

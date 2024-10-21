@@ -14,8 +14,8 @@ Author: themehippo.com
 # Mid grey (sub header) #f4f4f4
 # -------------------------------------------------------------------*/
 .rounded-rectangle {
-    width: 150px; 
-    height: 50px;
+    width: 170px; 
+    height: 40px;
     border: 5px solid #6ab5c7; /* 边框样式 */
     border-radius: 20px; /* 圆弧边角 */
     display: flex;
