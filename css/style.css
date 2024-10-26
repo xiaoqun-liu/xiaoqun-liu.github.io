@@ -255,7 +255,7 @@ ul {
 
 .right-col-block {
     -webkit-flex : 2 0 0;
-    flex         : 2 0 0;
+    flex         : 2.5 0 0;
     position     : relative;
     background   : #ffffff;
     /* border-top : 0px solid #eaeaea; */
@@ -311,7 +311,7 @@ ul {
  *-------------------*/
  /* big change */
 .section-wrapper {
-    padding       : 20px;
+    padding       : 10px;
     /* section下面的横线 */
     border-bottom : 0px solid #eaeaea;
     }
@@ -445,11 +445,11 @@ ul {
  * Expertise
  *-------------------*/
 .expertise-item {
-    margin-bottom : 20px;
+    margin-bottom : 0px;
     }
 
 .expertise-item h3 {
-    margin-bottom : 5px;
+    margin-bottom : 0px;
     font-weight   : 700;
     }
 
@@ -549,7 +549,7 @@ ul {
  *-------------------*/
 
 .content-item {
-    margin-bottom : 40px;
+    margin-bottom : 25px;
     }
 
 .content-item h3 {
