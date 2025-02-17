@@ -132,31 +132,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="section-title">
-                                        <h2>Publications <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xiaoqun-liu/xiaoqun-liu.github.io/main/google_scholar_crawler/gs_data_shieldsio.json&color=yellow"></h2>
-                                        <script>
-                                            fetch("https://xiaoqun-liu.github.io/google_scholar_crawler/gs_data.json")
-                                            .then(response => response.json())
-                                            .then(data => {
-                                                document.getElementById("total_cit").innerText = data.citedby;
-                                            })
-                                            .catch(error => console.error("Error loading citation data:", error));
-                                        </script>
-                                        <!-- <body>
-                                            <h1>Google Scholar Citations</h1>
-                                            <p id="citation-count">Loading...</p>
-                                        
-                                            <script>
-                                                fetch('google_scholar_crawler/gs_data.json')
-                                                .then(response => response.json())
-                                                .then(data => {
-                                                    document.getElementById('citation-count').innerText = `Citations: ${data.citedby}`;
-                                                })
-                                                .catch(error => {
-                                                    console.error('Error fetching citation count:', error);
-                                                    document.getElementById('citation-count').innerText = "Error loading citations";
-                                                });
-                                            </script>
-                                        </body> -->
+                                        <h2>Publications <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xiaoqun-liu/xiaoqun-liu.github.io/main/google_scholar_crawler/gs_data_shieldsio.json&color=6ab5c7"></h2>
                                     </div>
                                 </div>
                             </div>
@@ -342,9 +318,9 @@
                                         <p>Deal with tampered data when pre-training or fine-tuning Large Language
                                             Model(LLM) on specific function senario. Generate data with hygienic
                                             characteristic to counteract the potential security problem. Our work is
-                                            submitted to conference ICLR 2025: <a
-                                                href="https://openreview.net/attachment?id=NrfP7zZNiG&name=pdf"
-                                                target="_blank">https://openreview.net/attachment?id=NrfP7zZNiG&name=pdf</a>.<br>
+                                            submitted to ARR 2025: <a
+                                                href="https://openreview.net/pdf?id=EwuVMciETj"
+                                                target="_blank">https://openreview.net/pdf?id=EwuVMciETj</a>.<br>
                                             Aligning multimodal AI systems with key principles, as well as safely
                                             integrating external tool APIs, are crucial challenges that the AI research
                                             community is actively tackling. By pursuing innovative technical solutions
@@ -356,13 +332,23 @@
                                     </div>
 
                                     <div class="content-item">
+                                        <small>8/2024 - present</small>
+                                        <h3>cyber threat intelligence copilot <a href="proj/align.html">Details</a></h3>
+                                        <h4>Under the guidance of Professor Zhaohan Xi, Binghamton University, State
+                                            University of New York</h4>
+                                        <img src="img/cyber_t.png" alt="" width=100% height=auto style="padding-bottom: 5px;"><br>
+                                        <p>The rapid expansion of cyber threat knowledge, exemplified by databases like MITRE-CVE and NVD, overwhelms security professionals, necessitating scalable intelligence solutions. We introduce <b>Cylens</b>, a cyber threat intelligence copilot powered by large language models, designed to support the entire threat management lifecycle. Cylens integrates domain-specific knowledge, a retrieval module for real-time threat analysis, and customizable capabilities for specialized threat analysis. 
+                                        </p>
+                                    </div>
+
+                                    <div class="content-item">
                                         <small>5/2024 - present</small>
                                         <h3>Are Langauge Models Overscaled? Slimming LLMs as Better Tool Learning Agents
                                             <a href="proj/tool.html">Details</a>
                                         </h3>
                                         <h4>Under the guidance of Professor Zhaohan Xi, Binghamton University, State
                                             University of New York</h4>
-                                        <img src="img/tool.png" alt="" width=60% height=auto><br>
+                                        <img src="img/tool.png" alt="" width=60% height=auto style="padding-bottom: 5px;padding-top: 5px;"><br>
                                         We investigates tool learning, posing key questions about the necessity of
                                         large-scale parameters and the optimal model scale for maintaining robust tool
                                         learning while minimizing resource consumption; our findings suggest that
@@ -395,7 +381,7 @@
                                         <h3>ML: Learning on the Edge & Model Compression <a
                                                 href="proj/compression.html">Details</a></h3>
                                         <h4>Research Assistant</h4>
-                                        <img src="img/compression.png" alt="" width=80% height=auto><br><br>
+                                        <img src="img/compression.png" alt="" width=80% height=auto style="padding-bottom: 5px;"><br>
                                         LLM-Barber is a novel method for efficiently pruning large language models
                                         (LLMs) by rebuilding the sparsity mask in a one-shot fashion, without any
                                         retraining or weight reconstruction, while considering block-aware
@@ -428,8 +414,8 @@
                                         <small>6/2022 - 12/2023</small>
                                         <h3>Evolutionary Forward-forward <a href="404.html">Details</a></h3>
                                         <h4>Research Assistant</h4>
-                                        <img src="img/forward.png" alt="" width=90% height=auto><br>
-                                        Improve the performance of Forward-forward algorithm by Geoffrey Hinton. Enhance Geoffrey Hinton’s Forward-forward algorithm, implement it in memristor crossbar architecture.<br>
+                                        <img src="img/forward.png" alt="" width=90% height=auto style="padding-bottom: 5px;"><br>
+                                        Improve the performance of Forward-forward algorithm by Geoffrey Hinton. Enhance Geoffrey Hinton's Forward-forward algorithm, implement it in memristor crossbar architecture.<br>
                                         Under the guidance of Professor Xin Yao, (now)Lingnan University, Hong Kong, China and Professor Xinming Shi, (now)Queen's University Belfast, Northern
                                             Ireland, United Kingdom.
                                     </div>
