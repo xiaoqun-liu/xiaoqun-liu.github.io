@@ -27,4 +27,14 @@ author = scholarly.search_author_id(scholar_id)
 scholarly.fill(author)
 
 citation_count = author['citedby']
-print(f"Citations: {citation_count}")
+
+with open(f'gs_data.json', 'w') as outfile:
+    json.dump(author, outfile, ensure_ascii=False)
+    
+shieldio_data = {
+  "schemaVersion": 1,
+  "label": "citations",
+  "message": f"{author['citedby']}",
+}
+with open(f'gs_data_shieldsio.json', 'w') as outfile:
+    json.dump(shieldio_data, outfile, ensure_ascii=False)
