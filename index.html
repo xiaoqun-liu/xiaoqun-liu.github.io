@@ -133,7 +133,14 @@
                                 <div class="col-md-12">
                                     <div class="section-title">
                                         <h2>Publications <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xiaoqun-liu/xiaoqun-liu.github.io/main/google_scholar_crawler/gs_data_shieldsio.json"></h2>
-                                            
+                                        <script>
+                                            fetch("https://xiaoqun-liu.github.io/google_scholar_crawler/gs_data.json")
+                                            .then(response => response.json())
+                                            .then(data => {
+                                                document.getElementById("total_cit").innerText = data.citedby;
+                                            })
+                                            .catch(error => console.error("Error loading citation data:", error));
+                                        </script>
                                         <!-- <body>
                                             <h1>Google Scholar Citations</h1>
                                             <p id="citation-count">Loading...</p>
