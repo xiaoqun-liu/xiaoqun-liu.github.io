@@ -28,7 +28,9 @@ scholarly.fill(author)
 
 citation_count = author['citedby']
 
-with open(f'gs_data.json', 'w') as outfile:
+file_path = os.path.join(os.path.dirname(__file__), "gs_data.json")
+
+with open(file_path, 'w') as outfile:
     json.dump(author, outfile, ensure_ascii=False)
     
 shieldio_data = {
@@ -36,5 +38,7 @@ shieldio_data = {
   "label": "citations",
   "message": f"{author['citedby']}",
 }
-with open(f'gs_data_shieldsio.json', 'w') as outfile:
+
+file_path = os.path.join(os.path.dirname(__file__), "gs_data_shieldsio.json")
+with open(file_path, 'w') as outfile:
     json.dump(shieldio_data, outfile, ensure_ascii=False)
