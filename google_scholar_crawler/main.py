@@ -49,7 +49,12 @@ if not scholar_id:
 
 try:
   author: dict = scholarly.search_author_id(scholar_id)
-  scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
+  # Allow skipping publications (they can take much longer) via env var SKIP_PUBLICATIONS
+  skip_pubs = os.environ.get('SKIP_PUBLICATIONS', '').lower() in ('1', 'true', 'yes')
+  if skip_pubs:
+    scholarly.fill(author, sections=['basics', 'indices', 'counts'])
+  else:
+    scholarly.fill(author, sections=['basics', 'indices', 'counts', 'publications'])
 except Exception as e:
   print(f'Failed to fetch author data for id "{scholar_id}": {e}', file=sys.stderr)
   sys.exit(2)

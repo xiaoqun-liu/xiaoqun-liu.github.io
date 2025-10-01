@@ -9,6 +9,7 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -44,6 +45,7 @@ jobs:
       - name: Run Google Scholar crawler
         env:
           GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
+          SKIP_PUBLICATIONS: 'true'
         run: |
           # prefer explicit id from secret; fallback to google_scholar_crawler/gs_id.txt if present
           if [ -n "${GOOGLE_SCHOLAR_ID}" ]; then
@@ -55,7 +57,8 @@ jobs:
             exit 0
           fi
           echo "Using Google Scholar ID: ${ID}"
-          python3 google_scholar_crawler/main.py -i "${ID}"
+          # limit execution to avoid very long runs (timeout from coreutils)
+          timeout 720s python3 google_scholar_crawler/main.py -i "${ID}"
 
       - name: Commit and push changes
         run: |
