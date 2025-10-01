@@ -26,6 +26,21 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f google_scholar_crawler/requirements.txt ]; then pip install -r google_scholar_crawler/requirements.txt; fi
 
+      - name: Debug repo contents (temporary)
+        run: |
+          echo "--- Debug: current working directory ---"
+          pwd
+          echo "--- Debug: list top-level files ---"
+          ls -la
+          echo "--- Debug: list google_scholar_crawler/ ---"
+          ls -la google_scholar_crawler || true
+          echo "--- Debug: show gs_id.txt if present ---"
+          if [ -f google_scholar_crawler/gs_id.txt ]; then
+            echo "gs_id.txt found:"; cat google_scholar_crawler/gs_id.txt
+          else
+            echo "gs_id.txt not found"
+          fi
+
       - name: Run Google Scholar crawler
         env:
           GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
