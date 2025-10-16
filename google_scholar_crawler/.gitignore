@@ -1,4 +1,11 @@
-# *.json
+*.json
+!google_scholar_crawler/
+!google_scholar_crawler/results/
+!google_scholar_crawler/results/gs_data.json
+!google_scholar_crawler/results/gs_data_shieldsio.json
+!results/gs_data_shieldsio.json
+!results/gs_data.json
+!results/*.json
 .DS_Store
 /push.sh
 

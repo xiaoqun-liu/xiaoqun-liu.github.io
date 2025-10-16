@@ -3,8 +3,11 @@ name: Get Citation Data
 on:
   page_build:
   schedule:
-    - cron: '0 8 * * *'   # Morning 8 
-  workflow_dispatch:       # 可手动触发
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # push
 
 jobs:
   build:
@@ -25,20 +28,31 @@ jobs:
       - name: Run crawler
         env:
           GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
-          PYTHONUNBUFFERED: '1'    # insures real-time logging
+          PYTHONUNBUFFERED: '1'
         run: |
-          set -euxo pipefail       # exit on error, print all commands
+          set -euxo pipefail
           cd google_scholar_crawler
           pwd; ls -al
-          # set 600s timeout to avoid infinite hanging
           timeout 600s python3 -u main.py
-          ls -al results || true   # list results folder
+          echo "== results listing =="
+          mkdir -p results
+          ls -al results || true
 
-      # push results back to repo
       - name: Commit and Push results
         run: |
+          set -euxo pipefail
+          git rev-parse --abbrev-ref HEAD || true
+          git remote -v
+
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "xiaoqun.will@gmail.com"
-          git add google_scholar_crawler/results/*.json
+
+          git add -f google_scholar_crawler/results/gs_data.json \
+                   google_scholar_crawler/results/gs_data_shieldsio.json
+
+          git status --short
           git commit -m "Updated Citation Data" || echo "No changes to commit"
-          git push origin main --force
+
+          # rebase to avoid unnecessary merge commits
+          git pull --rebase origin main || true
+          git push origin main
