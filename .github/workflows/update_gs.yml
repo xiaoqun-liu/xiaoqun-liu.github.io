@@ -3,42 +3,38 @@ name: Get Citation Data
 on:
   page_build:
   schedule:
-    - cron: '0 8 * * *'   # 每天早上 8 点执行
+    - cron: '0 8 * * *'   # Morning 8 
   workflow_dispatch:       # 可手动触发
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # 1️⃣ 拉取仓库
       - uses: actions/checkout@v4
 
-      # 2️⃣ 设置 Python 环境
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
-      # 3️⃣ 安装依赖
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
           pip install -r google_scholar_crawler/requirements.txt
 
-      # 4️⃣ 运行爬虫
       - name: Run crawler
         env:
           GOOGLE_SCHOLAR_ID: ${{ secrets.GOOGLE_SCHOLAR_ID }}
-          PYTHONUNBUFFERED: '1'    # 实时打印日志
+          PYTHONUNBUFFERED: '1'    # insures real-time logging
         run: |
-          set -euxo pipefail       # 遇错立即退出
+          set -euxo pipefail       # exit on error, print all commands
           cd google_scholar_crawler
           pwd; ls -al
-          # 运行 main.py，设置超时（600 秒 = 10 分钟）
+          # set 600s timeout to avoid infinite hanging
           timeout 600s python3 -u main.py
-          ls -al results || true   # 输出结果目录文件列表
+          ls -al results || true   # list results folder
 
-      # 5️⃣ 提交与推送结果（在主仓库，不要再 git init）
+      # push results back to repo
       - name: Commit and Push results
         run: |
           git config user.name "${GITHUB_ACTOR}"
