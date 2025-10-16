@@ -1,4 +1,4 @@
-*.json
+# *.json
 !google_scholar_crawler/
 !google_scholar_crawler/results/
 !google_scholar_crawler/results/gs_data.json
