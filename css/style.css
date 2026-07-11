@@ -655,3 +655,20 @@ ul {
     text-align : center;
     top        : 65%;
     }
+
+/* --------------------------------------
+ * Global "make everything bigger" overrides
+ *------------------------------------------*/
+/* Scale the whole page up uniformly (text, image, spacing). Adjust the value to taste. */
+#main-wrapper {
+    zoom : 1.2;
+    }
+
+/* Widen the content column on large screens so it fills more of the page
+   instead of leaving a big empty margin on the right. */
+@media (min-width : 1200px) {
+    .columns-block.container {
+        width     : 100%;
+        max-width : 1350px;
+        }
+    }
