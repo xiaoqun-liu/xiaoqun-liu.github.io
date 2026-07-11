@@ -348,8 +348,7 @@ ul {
 .profile{
     margin-top: 0px;
     margin-bottom: 10px;
-    border-radius: 10%;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex; 
     justify-content: center; 
     align-items: center; 
