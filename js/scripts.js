@@ -12,10 +12,6 @@ jQuery(function ($) {
 
 
 
-    // --------------------------------------------------------------------
-    // Sticky Sidebar
-    // --------------------------------------------------------------------
-
-    $('.left-col-block, .right-col-block').theiaStickySidebar();
+    // Sticky sidebar is handled in pure CSS (position: sticky) — see style.css
 
 }); // JQuery end

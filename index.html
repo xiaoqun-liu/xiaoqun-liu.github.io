@@ -16,7 +16,7 @@
     <!-- favicon -->
     <!-- <link href="favicon.png" rel=icon> -->
     <!-- web-fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- font-awesome -->
     <link href="css/font-awesome.min.css" rel="stylesheet">
@@ -43,12 +43,14 @@
             <!-- <a href="#home" class="btn btn-header">Homepage</a> -->
             <!-- <a href="#interest" class="btn-link">Interest</a> -->
             <a href="#pub" class="btn  btn-header">Publication</a>
+            <a href="#edu" class="btn btn-header">Education</a>
+            <a href="#experience" class="btn btn-header">Experience</a>
             <!-- <a href="#research" class="btn btn-header">Research</a> -->
             <!-- <a href="#intern" class="btn btn-header">Internship</a> -->
             <!-- <a href="#talk" class="btn btn-header">Talk</a> -->
             <!-- <a href="#PRO" class="btn btn-header">Project</a> -->
             <!-- <a href="#extra" class="btn btn-header">extra</a> -->
-            <a href="contact.html" class="btn btn-header">Contact</a>
+            <a href="#" class="btn btn-header email-link">Contact</a>
         </div>
     </header>
 
@@ -83,7 +85,7 @@
                             <!-- <li><a href="https://www.instagram.com/shawn.xiaoqun/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li> -->
                             <li><a href="https://www.linkedin.com/in/xiaoqun-liu-b11224300"><i class="fab fa-linkedin"
                                         aria-hidden="true"></i></a></li>
-                            <li><a href="mailto:xl@msu.edu"><i class="fa-regular fa-envelope"
+                            <li><a href="#" class="email-link"><i class="fa-regular fa-envelope"
                                         aria-hidden="true"></a></i></li>
                             <!-- <li><a href="weixin://add/17839964907"><i class="fab fa-wechat" aria-hidden="true"></i></a> -->
                             <!-- <li><a href="slide.html"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i></a></li> -->
@@ -111,7 +113,7 @@
 
                                 <!-- <a href='https://scholar.google.com/citations?hl=en&user=5_B6lbwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
-                            <p>Feel free to <a href="contact.html">reach out to me</a> for collaborations, questions, or
+                            <p>Feel free to <a href="#" class="email-link">reach out to me</a> for collaborations, questions, or
                                 just to chat! You can call me Shawn.</p>
 
 
@@ -273,8 +275,8 @@
                                         <h3>Michigan State University</h3>
                                         <small>8/2025 - present, East Lansing, Michigan, United States</small><br>
                                         Doctoral of Engineering in Computer Science.<br>
-                                        Award: University Distinguished Fellowship 2025 (40/12000).<br>
-                                        Award: Frank B. Martin Cumrec Doctoral Fellowship Award 2025.
+                                        <span class="award">Award: University Distinguished Fellowship 2025 (40/12000).</span><br>
+                                        <span class="award">Award: Frank B. Martin Cumrec Doctoral Fellowship Award 2025.</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -291,7 +293,7 @@
                                         <h3>State University of New York at Stony Brook</h3>
                                         <small>1/2024 - 6/2024, Stony Brook, New York, United State</small><br>
                                         Exchange Student in Computer Science. <br>
-                                        University Exchange Scholarship for a publicly-funded exchange program.
+                                        <span class="award">University Exchange Scholarship for a publicly-funded exchange program.</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -310,7 +312,7 @@
                                         </h3>
                                         <small>6/2021 - 6/2025, Shen Zhen, Guang Dong, China</small><br>
                                         Bachelor of Engineering in Computer Science.<br>
-                                        Awards: Outstanding Scholar First-Class Award; Outstanding Graduate Award.
+                                        <span class="award">Awards: Outstanding Scholar First-Class Award; Outstanding Graduate Award.</span>
                                     </div>
                                 </div>
                                 <div class="col-md-2">
@@ -802,6 +804,16 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/theia-sticky-sidebar.js"></script>
     <script src="js/scripts.js"></script>
+    <script>
+        // assemble the email at runtime so the address never appears in the page source
+        (function () {
+            var p = ['ude', 'usm', 'lx'].map(function (s) { return s.split('').reverse().join(''); });
+            var addr = p[2] + '@' + p[1] + '.' + p[0];
+            document.querySelectorAll('.email-link').forEach(function (a) {
+                a.setAttribute('href', 'mailto:' + addr);
+            });
+        })();
+    </script>
 </body>
 
 </html>

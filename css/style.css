@@ -667,3 +667,312 @@ ul {
         max-width : 1350px;
         }
     }
+/* ==========================================================
+ * Visual refresh — clean academic layer
+ * (overrides the legacy Resumex styles above)
+ * ========================================================== */
+:root {
+    --accent    : #1f5c99;
+    --ink       : #1f2933;
+    --ink-soft  : #616e7c;
+    --ink-faint : #9aa5b1;
+    --line      : #e4e7eb;
+    --bg        : #fdfdfc;
+}
+
+html {
+    scroll-behavior    : smooth;
+    scroll-padding-top : 60px;
+}
+
+body {
+    font-family             : 'Inter', 'Hind', sans-serif;
+    font-size               : 15px;
+    line-height             : 1.75;
+    font-weight             : 400;
+    color                   : var(--ink);
+    background              : var(--bg);
+    -webkit-font-smoothing  : antialiased;
+    -moz-osx-font-smoothing : grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color : var(--ink);
+}
+
+/* ---------- links: quiet, underlined on hover only ---------- */
+a {
+    color           : var(--accent);
+    text-decoration : none;
+    font-weight     : 500;
+    transition      : color .2s ease;
+}
+
+a,
+a:active,
+a:focus {
+    text-decoration : none;
+}
+
+a:hover,
+a:focus {
+    color                 : var(--ink);
+    text-decoration       : underline;
+    text-underline-offset : 3px;
+    text-decoration-thickness : 1px;
+}
+
+/* ---------- sticky top nav ---------- */
+.page-header {
+    /* fixed, not sticky: immune to overflow/ancestor quirks */
+    position      : fixed;
+    top           : 0;
+    left          : 0;
+    right         : 0;
+    z-index       : 2030;
+    background    : rgba(253, 253, 252, .92);
+    -webkit-backdrop-filter : blur(8px);
+    backdrop-filter : blur(8px);
+    border-bottom : 1px solid var(--line);
+    padding       : 8px 0;
+}
+
+/* keep page content clear of the fixed nav */
+body {
+    padding-top : 50px;
+}
+
+.page-header .btn {
+    background     : transparent;
+    color          : var(--ink-soft);
+    font-size      : 12px;
+    font-weight    : 500;
+    letter-spacing : .12em;
+    padding        : 6px 12px;
+    border-radius  : 0;
+    transition     : color .2s ease;
+}
+
+.page-header .btn:hover,
+.page-header .btn:focus {
+    color      : var(--accent);
+    background : transparent;
+}
+
+/* ---------- page frame: flat, airy ---------- */
+.columns-block {
+    background : transparent;
+    margin     : 10px auto;
+}
+
+.left-col-block {
+    background   : transparent;
+    border-right : 1px solid var(--line);
+}
+
+.right-col-block {
+    background : transparent;
+}
+
+/* ---------- profile / sidebar ---------- */
+.profile img {
+    width         : 180px;
+    height        : 180px;
+    object-fit    : cover;
+    border-radius : 50%;
+    border        : 1px solid var(--line);
+}
+
+.name h1 {
+    font-family    : 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-size      : 30px;
+    font-weight    : 600;
+    letter-spacing : 0;
+    color          : var(--ink);
+}
+
+.social-icon li {
+    margin : 0 3px;
+}
+
+.social-icon li a {
+    width         : 36px;
+    height        : 36px;
+    line-height   : 34px;
+    font-size     : 14px;
+    color         : var(--ink-soft);
+    background    : transparent;
+    border        : 1px solid var(--line);
+    border-radius : 50%;
+    transition    : all .2s ease;
+}
+
+.social-icon li a:hover {
+    color           : var(--accent);
+    border-color    : var(--accent);
+    background      : transparent;
+    text-decoration : none;
+}
+
+.header .content .about-text {
+    color : var(--ink-soft);
+}
+
+/* ---------- sections ---------- */
+.section-wrapper {
+    padding : 30px 44px 34px;
+}
+
+@media (max-width : 480px) {
+    .section-wrapper {
+        padding : 26px 20px 12px;
+        }
+    }
+
+.section-title {
+    margin-bottom : 24px;
+}
+
+.section-title h2 {
+    font-family    : 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    color          : var(--ink);
+    font-size      : 23px;
+    font-weight    : 600;
+    letter-spacing : 0;
+    border-bottom  : 1px solid var(--line);
+    padding-bottom : 10px;
+    margin-bottom  : 0;
+}
+
+.section-title h2 img {
+    vertical-align : middle;
+    margin-left    : 10px;
+}
+
+/* no divider between sections — whitespace does the separating */
+.section-wrapper hr {
+    display : none;
+}
+
+/* ---------- publication entries: plain list, no cards ---------- */
+.content-item {
+    margin-bottom : 26px;
+}
+
+/* topic label: understated small caps, no pill */
+.content-item > small:first-child {
+    color          : var(--ink-faint);
+    font-size      : 11px;
+    font-weight    : 600;
+    letter-spacing : .12em;
+    text-transform : uppercase;
+}
+
+.content-item > strong {
+    font-size   : 15.5px;
+    font-weight : 650;
+    color       : var(--ink);
+    line-height : 1.55;
+}
+
+.content-item h4 {
+    color       : var(--ink-soft);
+    font-size   : 13.5px;
+    font-weight : 400;
+    line-height : 1.7;
+    margin      : 3px 0 0;
+}
+
+.content-item h4 strong {
+    color       : var(--ink);
+    font-weight : 600;
+}
+
+.content-item h4 a {
+    font-size   : 13px;
+    font-weight : 500;
+    color       : var(--accent);
+    margin-right : 14px;
+}
+
+/* ---------- education & experience ---------- */
+.expertise-item {
+    padding-bottom : 4px;
+}
+
+.expertise-item h3 {
+    font-size   : 16px;
+    font-weight : 600;
+    color       : var(--ink);
+}
+
+.expertise-item small {
+    color       : var(--ink-soft);
+    font-weight : 400;
+}
+
+.expertise-item strong {
+    color       : var(--ink);
+    font-weight : 600;
+}
+
+.expertise-item img {
+    border-radius : 0;
+    background    : transparent;
+    padding       : 0;
+    border        : 0;
+}
+
+/* ---------- footer ---------- */
+.footer {
+    background : transparent;
+    border-top : 1px solid var(--line);
+}
+
+.footer .copyright-section {
+    color : var(--ink-faint);
+}
+
+/* ---------- misc ---------- */
+::selection {
+    background : var(--accent);
+    color      : #ffffff;
+}
+
+/* vertically center the school crest with its text in Education */
+@media (min-width : 992px) {
+    #edu .row {
+        display     : flex;
+        align-items : center;
+        }
+
+    #edu .row .expertise-item img {
+        display : block;
+        margin  : 0 auto;
+        }
+    }
+
+/* ---------- pinned left sidebar ----------
+ * The legacy template hides overflow on these wrappers, which
+ * disables position:sticky — restore visible overflow, then pin
+ * the profile header below the sticky top nav while scrolling. */
+#main-wrapper,
+.left-col-block {
+    overflow : visible;
+}
+
+@media (min-width : 769px) {
+    .left-col-block .header {
+        position : sticky;
+        top      : 70px;
+        }
+    }
+
+/* ---------- award highlight: quiet emphasis ---------- */
+.expertise-item .award {
+    font-weight : 500;
+    color       : var(--ink);
+    /* soft highlighter wash across the lower half of the line */
+    background  : linear-gradient(transparent 55%, rgba(245, 200, 66, .26) 0);
+    padding     : 0 2px;
+}
