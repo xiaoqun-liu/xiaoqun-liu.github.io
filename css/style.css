@@ -724,15 +724,18 @@ a:focus {
 
 /* ---------- sticky top nav ---------- */
 .page-header {
-    /* fixed, not sticky: immune to overflow/ancestor quirks */
+    /* fixed, not sticky: immune to overflow/ancestor quirks.
+     * Solid background + own compositing layer (translateZ) —
+     * backdrop-filter on fixed elements triggers a Chrome bug
+     * where the bar drifts with the scrolling content. */
     position      : fixed;
     top           : 0;
     left          : 0;
     right         : 0;
     z-index       : 2030;
-    background    : rgba(253, 253, 252, .92);
-    -webkit-backdrop-filter : blur(8px);
-    backdrop-filter : blur(8px);
+    margin        : 0; /* bootstrap's .page-header component adds margin: 40px 0 20px */
+    background    : #fdfdfc;
+    transform     : translateZ(0);
     border-bottom : 1px solid var(--line);
     padding       : 8px 0;
 }
@@ -969,7 +972,7 @@ body {
     }
 
 /* ---------- award highlight: quiet emphasis ---------- */
-.expertise-item .award {
+.award {
     font-weight : 500;
     color       : var(--ink);
     /* soft highlighter wash across the lower half of the line */
