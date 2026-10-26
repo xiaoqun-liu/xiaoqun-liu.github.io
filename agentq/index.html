@@ -116,6 +116,15 @@ section{padding-block:30px 10px}
 .fig>div+div{border-left:1px solid var(--line)}
 .fig svg{width:100%;height:auto;display:block;font-family:var(--mono)}
 .fig figcaption{font-size:13px;color:var(--ink-soft);line-height:1.6}
+/* figures reproduced from the paper */
+.paper-fig{margin:24px 0 0;border:1px solid var(--line);border-radius:4px;background:#fff;padding:16px 18px;display:grid;gap:10px;min-width:0}
+.paper-fig img{width:100%;height:auto;display:block;max-width:100%}
+.paper-fig figcaption{font-size:13px;color:var(--ink-soft);line-height:1.6}
+.paper-fig figcaption b{color:var(--ink);font-weight:600}
+.paper-fig.side{grid-template-columns:minmax(0,350px) minmax(0,1fr);gap:12px 32px;align-items:center}
+.paper-fig.side figcaption{display:grid;gap:12px;font-size:14px;line-height:1.7;max-width:46ch}
+.paper-fig.side figcaption b{display:block;font-size:15px;line-height:1.5}
+.paper-fig.side figcaption .k{color:var(--ink);font-weight:600}
 .layers{display:grid;grid-template-columns:repeat(28,1fr);gap:3px 3px;align-items:end}
 .layers i{display:block;height:34px;border-radius:1px;background:var(--panel);border:1px solid var(--line)}
 .layers i.band{background:var(--fire);border-color:var(--fire)}
@@ -168,7 +177,7 @@ pre{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:
 footer{margin-top:36px;padding-block:20px 40px;border-top:1px solid var(--line);color:var(--ink-faint);font-size:13px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:820px){
-  .demo-body,.method-text,.fig,.steps,.stats,.linklist{grid-template-columns:1fr}
+  .demo-body,.method-text,.fig,.steps,.stats,.linklist,.paper-fig.side{grid-template-columns:1fr}
   .fig>div+div{border-left:0;border-top:1px solid var(--line)}
   .def>div{grid-template-columns:1fr}
   .def p{grid-column:1}
@@ -259,11 +268,25 @@ footer{margin-top:36px;padding-block:20px 40px;border-top:1px solid var(--line);
         <p>The victim loads the same checkpoint with NF4, FP4, or INT8 to save memory. Rounding pushes weights across the boundary the attacker planted. The agent now emits a malicious call such as <code>diagnostic_trace_submit</code>.</p>
       </div>
     </div>
+    <figure class="paper-fig">
+      <img src="img/fig1-overview.png" alt="Overview figure: (A) an attacker uploads an FP16 checkpoint to Hugging Face; normal deployment on server GPUs yields a benign agent, while quantization with bitsandbytes NF4, int8 or FP4 triggers the attack; (B) side-by-side tool calls from the full-precision and quantized model, where the quantized one adds a diagnostic_trace_submit call; (C) the two-stage AgentQ training: LoRA harmful injection and merge, then partial-PGD projection onto the quantization-equivalent class" width="1410" height="700" loading="lazy">
+      <figcaption><b>Figure 1 of the paper.</b> (A) Quantization is the trigger: the same uploaded checkpoint is benign on server GPUs and malicious once quantized. (B) The two deployments answer the same stock-price request; only the quantized one appends an exfiltration call. (C) Training: harmful LoRA injection and merge, then projection of the partial-layer weights onto the quantization-equivalent class so that full-precision inference stays benign.</figcaption>
+    </figure>
   </section>
 
   <section id="method">
     <div class="section-title"><h2>Method</h2></div>
     <p class="lede">Directly porting prior QCA recipes does fire after quantization, but it breaks the model's structured output: the parser rejects the malicious call and benign utility collapses. AgentQ changes two things.</p>
+    <figure class="paper-fig side" style="margin:0 0 26px">
+      <img src="img/fig3-direct-port.png" alt="Two line charts for a direct port of prior QCA on Qwen3.5-4B: (a) normal utility falls from about 0.8 at FP16 to about 0.3 at fp4 for tool selection and argument injection while the clean baseline stays near 1.0; (b) attack success rate is 0 at FP16 and about 1.0 at nf4, fp4 and int8" width="692" height="691" loading="lazy">
+      <figcaption>
+        <b>Figure 3 of the paper: the direct port is not a usable attack.</b>
+        <span>The recipe of Egashira et al. (2024), full-rank SFT plus full-layer PGD, ported unchanged to Qwen3.5-4B.</span>
+        <span><span class="k">(b) The trigger works.</span> ASR is 0 at FP16 and about 1.0 on NF4, FP4 and INT8, for all three tasks.</span>
+        <span><span class="k">(a) The agent breaks.</span> Tool-selection and argument utility fall to about a third of the clean baseline. The quantized agent is visibly damaged, and its malicious calls are often not even parseable.</span>
+        <span><span class="k">What AgentQ changes.</span> Keep the stealth of (b) and hold utility near the dotted line, by restricting the injection to a band of layers and repairing only those weights.</span>
+      </figcaption>
+    </figure>
     <div class="method">
       <div class="method-text">
         <div>
@@ -455,7 +478,7 @@ footer{margin-top:36px;padding-block:20px 40px;border-top:1px solid var(--line);
     var gx = ml + gi*groupW + pad/2;
     series.forEach(function(s,si){
       var v = s.vals[gi], x = gx + si*barW;
-      out += '<rect x="'+x+'" y="'+y(v)+'" width="'+(barW-3)+'" height="'+(ih - v*ih)+'" fill="#b42318" fill-opacity="'+s.op+'"/>';
+      out += '<rect x="'+x+'" y="'+y(v)+'" width="'+(barW-3)+'" height="'+(v*ih)+'" fill="#b42318" fill-opacity="'+s.op+'"/>';
       out += '<text x="'+(x+(barW-3)/2)+'" y="'+(y(v)-5)+'" font-size="9.5" text-anchor="middle" fill="#1f2933">'+v.toFixed(2)+'</text>';
     });
     out += '<text x="'+(gx + (groupW-pad)/2)+'" y="'+(H-mb+20)+'" font-size="11" text-anchor="middle" fill="#1f2933">'+m+'</text>';
